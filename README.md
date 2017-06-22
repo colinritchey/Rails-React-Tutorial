@@ -10,15 +10,18 @@ React with Redux works by manipulating one single root html element (usually a d
 
 As such Rails wont need its Views to be creating static routes. Instead we are going to set up our controllers as api controllers and the associated views as jbuilder files.
 
+When you have your desired Model created go ahead and generate a controller with the "Api" namespace.
 ```bash
 $ rails g controller Api::Songs
 ```
 
+Within the routes.rb file wrap your main resources routes with the namespace api with a default json format (see below).
+
 ```ruby
-# /server/config/routes
+# /server/config/routes.rb
 Rails.application.routes.draw do
 
-  namespace :api, defaults: {format: :json} do
+  namespace :api, defaults: { format: :json } do
     resources :songs, only: [:index, :show, :create]
   end
 end
@@ -27,7 +30,7 @@ end
 
 ```ruby
 
-#/server/
+#/server/app/controller/api/songs_controller.rb
 class Api::SongsController < ApplicationController
   def show
     @song = Song.find(params[:id])
@@ -39,4 +42,10 @@ class Api::SongsController < ApplicationController
     params.require(:song).permit(:name, :album, :artist, :track_id)
   end
 end
+```
+Jbuilder has a quite a few functions but in this tutorial we'll focus on extract and partial. json.extract! will take the first argument, the Model(s), and pluck the information provided by the subsequent arguments.
+
+```ruby
+# /server/app/views/api/songs/show.json.jbuilder
+json.extract! @song, :id, :name, :track_id
 ```
