@@ -1,5 +1,6 @@
 import React from 'react';
 import SongIndexItem from './SongIndexItem/SongIndexItem';
+import styles from './styles.css';
 
 class SongIndex extends React.Component {
   constructor(props){
@@ -31,14 +32,15 @@ class SongIndex extends React.Component {
     } else {
 
       return(
-        <div>
+        <div className={styles.song_index}>
           { songList.map((song) => {
-
             return(
-              <div key={`song-${song.id}`}>{song.name}</div>
-            )
-
-          }) }
+              <SongIndexItem
+                key={`song-${song.id}`}
+                name={song.name}/>
+              )
+            })
+          }
         </div>
       )
 
