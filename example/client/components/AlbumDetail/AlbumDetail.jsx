@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { SongItem } from './SongItem/SongItem';
+import { getAlbumDetail } from './actions';
+
 class AlbumDetail extends React.Component {
   constructor(props){
     super(props);
@@ -10,10 +13,9 @@ class AlbumDetail extends React.Component {
   componentDidMount(){
     let albumId = this.props.match.params.albumId;
 
-    $.ajax({url: `http://localhost:3000/api/albums/${albumId}`})
-      .then((res) => {
-        this.setState({ album: res });
-      });
+    getAlbumDetail(albumId).then((res) => {
+      this.setState({ album: res });
+    });
   }
 
   render(){
@@ -21,7 +23,7 @@ class AlbumDetail extends React.Component {
     if(album.songs === undefined){
       return (
         <div>
-          Album Detail
+          Loading...
         </div>
       )
     } else {
@@ -29,12 +31,7 @@ class AlbumDetail extends React.Component {
         <div>
           <h3>{album.name}</h3>
           {album.songs.map((song) =>
-            <div
-              key={`song-${song.id}`}
-              name={song.name}
-              >
-              {song.name}
-            </div>
+            <SongItem song={song} key={`song-${song.id}`}/>
           )}
         </div>
       )

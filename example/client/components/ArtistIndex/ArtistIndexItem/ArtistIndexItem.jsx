@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ArtistIndexItem = ({ artist }) => {
   return(
-    <div >
+    <div>
       <Link to={`/artists/${artist.id}`}>{artist.name}</Link>
     </div>
   )

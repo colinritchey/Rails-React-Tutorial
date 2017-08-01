@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './styles.css';
 import ArtistIndexItem from './ArtistIndexItem/ArtistIndexItem';
 
+import { getAllArtists } from './actions';
+
 class ArtistIndex extends React.Component {
   constructor(props){
     super(props);
@@ -10,10 +12,9 @@ class ArtistIndex extends React.Component {
   }
 
   componentDidMount(){
-    $.ajax({url: 'http://localhost:3000/api/artists'})
-      .then((res) => {
-        this.setState({ artists: res });
-      });
+    getAllArtists().then((res) => {
+      this.setState({ artists: res });
+    });
   }
 
   render(){

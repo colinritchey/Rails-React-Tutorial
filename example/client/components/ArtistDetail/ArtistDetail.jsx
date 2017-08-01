@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { AlbumItem } from './AlbumItem/AlbumItem';
+import { getArtistDetail } from './actions';
+
 class ArtistDetail extends React.Component {
   constructor(props){
     super(props);
@@ -11,10 +14,9 @@ class ArtistDetail extends React.Component {
   componentDidMount(){
     let artistId = this.props.match.params.artistId;
 
-    $.ajax({url: `http://localhost:3000/api/artists/${artistId}`})
-      .then((res) => {
-        this.setState({ artist: res });
-      });
+    getArtistDetail(artistId).then((res) => {
+      this.setState({ artist: res });
+    });
   }
 
   render(){
@@ -30,12 +32,7 @@ class ArtistDetail extends React.Component {
         <div>
           <h3>{artist.name}</h3>
           {artist.albums.map((album) =>
-            <div
-              key={`album-${album.id}`}
-              name={album.name}
-              >
-              {album.name}
-            </div>
+            <AlbumItem album={album} key={`album-${album.id}`}/>
           )}
         </div>
       )

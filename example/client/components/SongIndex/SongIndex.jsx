@@ -1,6 +1,7 @@
 import React from 'react';
 import SongIndexItem from './SongIndexItem/SongIndexItem';
 import styles from './styles.css';
+import { getAllSongs } from './actions';
 
 class SongIndex extends React.Component {
   constructor(props){
@@ -10,10 +11,9 @@ class SongIndex extends React.Component {
   }
 
   componentDidMount(){
-    $.ajax({url: 'http://localhost:3000/api/songs'})
-      .then((res) => {
-        this.setState({ songs: res });
-      });
+    getAllSongs().then((res) => {
+      this.setState({ songs: res });
+    });
   }
 
   render(){
