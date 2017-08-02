@@ -5,6 +5,7 @@ import SongIndex from './SongIndex/SongIndex';
 import ArtistIndex from './ArtistIndex/ArtistIndex';
 import ArtistDetail from './ArtistDetail/ArtistDetail';
 import AlbumDetail from './AlbumDetail/AlbumDetail';
+import SongDetail from './SongDetail/SongDetail';
 
 import styles from './styles.css';
 
@@ -21,7 +22,7 @@ class App extends Component {
             <Route exact path="/" component={ArtistIndex}/>
             <Route path="/artists/:artistId" component={ArtistDetail}/>
             <Route path="/albums/:albumId" component={AlbumDetail}/>
-            <Route path="/songs" component={SongIndex}/>
+            <Route path="/songs/:songId" component={SongDetail}/>
           </div>
 
         </div>
