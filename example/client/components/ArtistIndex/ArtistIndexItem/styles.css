@@ -1,0 +1,25 @@
+.artist_item_container{
+  display: inline-block;
+  width: 100%;
+}
+
+.artist_item{
+  padding: 2%;
+  margin-bottom: 2%;
+
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: row;
+
+}
+
+.artist_item_img{
+  margin-right: 10px;
+
+  height: 50px;
+  width: 50px;
+}

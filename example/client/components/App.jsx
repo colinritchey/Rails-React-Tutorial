@@ -16,13 +16,14 @@ class App extends Component {
         <div className={styles.App}>
           <div className={styles.App_header}>
             <h2>Rails and React Example</h2>
-              <div className={styles.content_container}>
-                <Route exact path="/" component={ArtistIndex}/>
-                <Route path="/artists/:artistId" component={ArtistDetail}/>
-                <Route path="/albums/:albumId" component={AlbumDetail}/>
-                <Route path="/songs" component={SongIndex}/>
-              </div>
           </div>
+          <div className={styles.content_container}>
+            <Route exact path="/" component={ArtistIndex}/>
+            <Route path="/artists/:artistId" component={ArtistDetail}/>
+            <Route path="/albums/:albumId" component={AlbumDetail}/>
+            <Route path="/songs" component={SongIndex}/>
+          </div>
+
         </div>
 
       </HashRouter>
