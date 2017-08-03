@@ -22,6 +22,7 @@ album_3 = Album.create!(name: "Rolling Stones", artist_id: artist_2.id)
 song_1 = Song.create!(
   name: "Baby I'm gonna leave you",
   album_id:  album_1.id,
+  embedded_url: 'UyOg0mt2R2k',
   lyrics: "Babe, baby, baby, I'm gonna leave you.
 I said baby, you know I'm gonna leave you.
 
@@ -73,6 +74,7 @@ I said that's when it's callin' me back home."
 song_2 = Song.create!(
   name: "Dazed and Confused",
   album_id:  album_1.id,
+  embedded_url: 'yO2n7QoyieM',
   lyrics: "Been dazed and confused for so long it's not true
 Wanted a woman, never bargained for you
 Lots of people talk and few of them know
@@ -99,6 +101,7 @@ Will your tongue wag so much when I send you the bill"
 song_3 = Song.create!(
   name: "Whole Lotta Love",
   album_id:  album_2.id,
+  embedded_url: 'Q0utAHY3xo4',
   lyrics: "You need cooling
 Baby I'm not fooling
 I'm gonna send ya
@@ -173,6 +176,7 @@ Ah-keep it cooling baby"
 song_4 = Song.create!(
   name: "Route 66",
   album_id:  album_3.id,
+  embedded_url: '4CgZnUXqvi8',
   lyrics: "Well if you ever plan to motor west
 Just take my way that's the highway that's the best
 Get your kicks on Route 66

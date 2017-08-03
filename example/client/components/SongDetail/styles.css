@@ -1,3 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.song_detail{
+  font-family: 'Roboto', sans-serif;
+}
+
+.album_artist_container{
+  display: flex;
+}
+
+.song_vid{
+  margin-right: 10px;
+}
+
+.album_img{
+  height: 100px;
+  width: 100px;
+  margin-right: 10%;
+}
+
+.album_artist{
+  display: flex;
+  flex-direction: column;
+}
+
+.album_artist a{
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #616161;
+}
+
+.song_album{
+  font-size: 20px
+}
+
+.song_artist{
+  font-size: 14px
+}
+
 .song_lyrics{
   white-space: pre-wrap;
 }
