@@ -16,7 +16,9 @@ class App extends Component {
 
         <div className={styles.App}>
           <div className={styles.App_header}>
-            <h2>Rails and React Example</h2>
+            <div className={styles.header_content}>
+              <h2><Link to={'/'}>Rails and React Example</Link></h2>
+            </div>
           </div>
           <div className={styles.content_container}>
             <Route exact path="/" component={ArtistIndex}/>
