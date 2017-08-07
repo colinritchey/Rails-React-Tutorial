@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { AlbumItem } from './AlbumItem/AlbumItem';
+import AlbumItem from './AlbumItem/AlbumItem';
 import { getArtistDetail } from './actions';
+import styles from './styles.css';
 
 class ArtistDetail extends React.Component {
   constructor(props){
@@ -29,7 +30,7 @@ class ArtistDetail extends React.Component {
       )
     } else {
       return(
-        <div>
+        <div className={styles.album_index}>
           <h3>{artist.name}</h3>
           {artist.albums.map((album) =>
             <AlbumItem album={album} key={`album-${album.id}`}/>

@@ -4,16 +4,16 @@
 }
 
 .artist_item{
-  padding: 2%;
+  /*padding: 2%;*/
   margin: 10px;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 
-  border: 1px solid lightgrey;
-  border-radius: 5px;
+  /*border: 1px solid lightgrey;
+  border-radius: 5px;*/
 
   background-color: white;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,8 +21,12 @@
 
 }
 
+.artist_item:hover{
+  transform: scale(1.05);
+}
+
 .artist_item_img{
-  margin-right: 10px;
+  /*margin-right: 10px;*/
 
   height: 50px;
   width: 50px;
