@@ -4,32 +4,26 @@
   width: 100%;
   background-color: white;
   margin-bottom: 10px;
+  align-items: center;
 }
 
 .album_item{
   margin: 10px;
-  margin-left: 10%;
   width: 70%;
   height: 150px;
-  /* background-color: white; */
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: space-between;
   float: left;
-
 }
 
 .album_item_img{
-  /*margin-right: 10px;*/
-
   height: 50px;
   width: 50px;
 }
 
 .album_songs{
   margin: 10px;
-  margin-left: 10%;
   width: 70%;
 
   display: flex;
@@ -41,6 +35,13 @@
 .album_songs button {
   float: left;
   width: 100px;
+  border: 0px;
+  background-color: white;
   display: inline;
   text-align: center;
+}
+
+.album_songs a{
+  align-self: center;
+  font-weight: bold;
 }

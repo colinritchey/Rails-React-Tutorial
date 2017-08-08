@@ -8,17 +8,11 @@ class AlbumItem extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = { album: this.props.album, showSongs: false};
+    this.state = { album: this.props.album };
   }
 
   render(){
     let album = this.state.album;
-
-    let albumDetail = '';
-
-    if(this.state.showSongs){
-      albumDetail = <AlbumDetail albumId={album.id}/>
-    }
 
     return(
       <div className={styles.album_item_container}>
@@ -28,8 +22,7 @@ class AlbumItem extends React.Component{
           <Link to={`/albums/${album.id}`}>{album.name}</Link>
         </div>
         <div className={styles.album_songs}>
-          <button onClick={() => this.setState({showSongs: !this.state.showSongs})}>Show Songs</button>
-          { albumDetail }
+          <AlbumDetail albumId={album.id}/>
         </div>
       </div>
     )
