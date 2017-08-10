@@ -15,9 +15,23 @@ Artist.delete_all
 artist_1 = Artist.create!(name: "Led Zepplin")
 artist_2 = Artist.create!(name: "Rolling Stones")
 
-album_1 = Album.create!(name: "Led Zepplin", artist_id: artist_1.id)
-album_2 = Album.create!(name: "Led Zepplin II", artist_id: artist_1.id)
-album_3 = Album.create!(name: "Rolling Stones", artist_id: artist_2.id)
+album_1 = Album.create!(
+  name: "Led Zepplin",
+  artist_id: artist_1.id,
+  image_url: "https://upload.wikimedia.org/wikipedia/en/e/ef/Led_Zeppelin_-_Led_Zeppelin_%281969%29_front_cover.png"
+)
+
+album_2 = Album.create!(
+  name: "Led Zepplin II",
+  artist_id: artist_1.id,
+  image_url: "https://upload.wikimedia.org/wikipedia/en/2/20/Led_Zeppelin_-_Led_Zeppelin_II.jpg"
+)
+
+album_3 = Album.create!(
+  name: "Rolling Stones",
+  artist_id: artist_2.id,
+  image_url: "https://upload.wikimedia.org/wikipedia/en/8/82/RollingStones.album.cover.jpg"
+)
 
 song_1 = Song.create!(
   name: "Baby I'm gonna leave you",

@@ -13,12 +13,17 @@ class AlbumItem extends React.Component{
 
   render(){
     let album = this.state.album;
+    let albumImage = 'https://i.imgur.com/CduSn7x.jpg';
+
+    if(album.image_url !== null){
+      albumImage = album.image_url;
+    }
 
     return(
       <div className={styles.album_item_container}>
         <div className={styles.album_item}>
           <img className={styles.album_item_img}
-            src='https://i.imgur.com/CduSn7x.jpg'></img>
+            src={ albumImage }></img>
           <Link to={`/albums/${album.id}`}>{album.name}</Link>
         </div>
         <div className={styles.album_songs}>
