@@ -13,7 +13,7 @@ class AlbumItem extends React.Component{
 
   render(){
     let album = this.state.album;
-    let albumImage = 'https://i.imgur.com/CduSn7x.jpg';
+    let albumImage = 'http://icons.iconarchive.com/icons/martz90/hex/512/google-play-music-icon.png';
 
     if(album.image_url !== null){
       albumImage = album.image_url;

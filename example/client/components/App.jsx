@@ -7,6 +7,8 @@ import ArtistDetail from './ArtistDetail/ArtistDetail';
 import AlbumDetail from './AlbumDetail/AlbumDetail';
 import SongDetail from './SongDetail/SongDetail';
 
+import { Navbar } from './Navbar/Navbar';
+
 import styles from './styles.css';
 
 class App extends Component {
@@ -15,11 +17,7 @@ class App extends Component {
       <HashRouter>
 
         <div className={styles.App}>
-          <div className={styles.App_header}>
-            <div className={styles.header_content}>
-              <h2><Link to={'/'}>Rails and React Example</Link></h2>
-            </div>
-          </div>
+          <Navbar/>
           <div className={styles.content_container}>
             <Route exact path="/" component={ArtistIndex}/>
             <Route path="/artists/:artistId" component={ArtistDetail}/>
