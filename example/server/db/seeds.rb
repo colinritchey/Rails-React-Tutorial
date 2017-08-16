@@ -12,9 +12,9 @@ Album.delete_all
 
 Artist.delete_all
 
-artist_led_zep = Artist.create!(name: "Led Zepplin")
-artist_rolling_stones = Artist.create!(name: "Rolling Stones")
-artist_cream = Artist.create!(name: "Cream")
+artist_led_zep = Artist.create!(name: "Led Zepplin", image_url: "https://upload.wikimedia.org/wikipedia/commons/4/49/LedZeppelinmontage.jpg")
+artist_rolling_stones = Artist.create!(name: "Rolling Stones", image_url: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Trs_20150623_milwaukee_jp_105.jpg")
+artist_cream = Artist.create!(name: "Cream", image_url: "https://upload.wikimedia.org/wikipedia/commons/5/58/Cream_Clapton_Bruce_Baker_1960s.jpg")
 
 album_led_zep = Album.create!(
   name: "Led Zepplin",
