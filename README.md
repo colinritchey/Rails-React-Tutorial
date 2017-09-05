@@ -1,14 +1,44 @@
-# Configuring Rails for a React/Redux Frontend
+# Configuring Rails for a React Frontend
 
-This tutorial will guide you how to set up your Ruby on Rails application for React with Redux by utilizing the JBuilder gem and Webpack.
+This tutorial will guide you how to set up a Ruby on Rails application for React by utilizing the JBuilder gem and Webpack.
 
-This repo has an example app that you are free to clone and mess around with.
+This repo has an example application that is available for download.
 
 ### Good Bye Erb, Hello JBuilder
 
-React with Redux works by manipulating one single root html element (usually a div) and will append components based on what is currently in the Redux store (and if you are using react-router whichever component is pointed to by the route path).
+React is a Javascript Library that builds components that manage their own state, then compose them to make complex UIs. [source](https://facebook.github.io/react/)
 
-As such Rails wont need its Views to be creating static routes. Instead we are going to set up our controllers as api controllers and the associated views as jbuilder files.
+```javascript
+//client/components/SongIndex/actions.js
+export const getAllSongs = () => (
+  $.ajax({url: 'http://localhost:3000/api/songs'})
+)
+```
+
+```javascript
+//client/components/SongIndex/SongIndex.jsx
+class SongIndex extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = { songs: {} };
+  }
+
+  componentDidMount(){
+    getAllSongs().then((res) => {
+      this.setState({ songs: res });
+    });
+  }
+
+  render(){
+    return(
+      ...
+    )
+  }
+}
+```
+
+As such Rails wont need to render html and instead we are going to set up our controllers to output JSON.
 
 When you have your desired Model created go ahead and generate a controller with the "Api" namespace.
 ```bash
@@ -43,6 +73,7 @@ class Api::SongsController < ApplicationController
   end
 end
 ```
+
 Jbuilder has a quite a few functions but in this tutorial we'll focus on extract and partial. json.extract! will take the first argument, the Model(s), and pluck the information provided by the subsequent arguments.
 
 ```ruby
@@ -62,12 +93,28 @@ Entry is the point of contact and will load dependencies throughout the chain of
 
 ```javascript
 // client/index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
 import App from './components/App';
+
+document.addEventListener("DOMContentLoaded", function(){
+  ReactDOM.render(<App />, document.getElementById('root'));
+});
 ```
 
 ```javascript
 // client/components/App.jsx
 import SongIndex from './SongIndex/SongIndex';
+
+class App extends Component {
+  render() {
+    return (
+      ...
+    );
+  }
+}
+
+export default App;
 ```
 
 ```javascript
@@ -104,9 +151,9 @@ Note: application.js is found in the assests/javascripts folder and will include
 
 ##### Loaders
 
-Loaders will read every file type specified and will convert them into modules. These are files can be .css, .html, or even .jsx.
+Loaders will read every file type specified and will convert them into modules. These are files can be .css, .html, .jsx, .jpeg, .etc.
 
-Some common ones are css-loader and style-loader, but for our React Components we will want to use babel-loader.
+A common one is babel-loader since it will convert ES6 javascript into ES5 (insuring all browsers can run ES6 javascript).
 
 ```javascript
 // client/webpack.config.js
