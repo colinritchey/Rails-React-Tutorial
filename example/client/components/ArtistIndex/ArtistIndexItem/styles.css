@@ -1,16 +1,11 @@
 .artist_item_container{
   display: inline-block;
-  /*width: 100%;*/
 }
 
 .artist_item{
-  /*padding: 2%;*/
   margin: 10px;
   width: 150px;
   height: 150px;
-
-  /*border: 1px solid lightgrey;
-  border-radius: 5px;*/
 
   background-color: white;
 
@@ -26,7 +21,6 @@
 }
 
 .artist_item_img{
-  /*margin-right: 10px;*/
 
   height: 60%;
   width: 60%;

@@ -4,7 +4,7 @@ import styles from './styles.css';
 
 export const SongItem = ({ song }) => {
   return(
-    <li className={styles.song_item}>
+    <li className='song_item'>
       <Link to={`/songs/${song.id}`}>{song.name}</Link>
     </li>
   )

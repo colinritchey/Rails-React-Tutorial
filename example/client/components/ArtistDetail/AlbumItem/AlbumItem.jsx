@@ -20,13 +20,13 @@ class AlbumItem extends React.Component{
     }
 
     return(
-      <div className={styles.album_item_container}>
-        <div className={styles.album_item}>
-          <img className={styles.album_item_img}
+      <div className='artist_album_item_container'>
+        <div className='artist_album_item'>
+          <img className='artist_album_item_img'
             src={ albumImage }></img>
           <Link to={`/albums/${album.id}`}>{album.name}</Link>
         </div>
-        <div className={styles.album_songs}>
+        <div className='artist_album_songs'>
           <AlbumDetail albumId={album.id}/>
         </div>
       </div>

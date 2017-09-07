@@ -1,4 +1,4 @@
-.album_item_container{
+.artist_album_item_container{
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.album_item{
+.artist_album_item{
   margin: 10px;
   width: 70%;
   height: 150px;
@@ -18,13 +18,13 @@
   float: left;
 }
 
-.album_item_img{
+.artist_album_item_img{
   height: 150px;
   width: 150px;
   margin-right: 20px;
 }
 
-.album_songs{
+.artist_album_songs{
   margin: 10px;
   width: 70%;
 
@@ -34,7 +34,7 @@
   float: left;
 }
 
-.album_songs button {
+.artist_album_songs button {
   float: left;
   width: 100px;
   border: 0px;
@@ -43,7 +43,7 @@
   text-align: center;
 }
 
-.album_songs a{
+.artist_album_songs a{
   align-self: center;
   font-weight: bold;
 }

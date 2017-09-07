@@ -16,9 +16,9 @@ class App extends Component {
     return (
       <HashRouter>
 
-        <div className={styles.App}>
+        <div className='App'>
           <Navbar/>
-          <div className={styles.content_container}>
+          <div className='content_container'>
             <Route exact path="/" component={ArtistIndex}/>
             <Route path="/artists/:artistId" component={ArtistDetail}/>
             <Route path="/albums/:albumId" component={AlbumDetail}/>

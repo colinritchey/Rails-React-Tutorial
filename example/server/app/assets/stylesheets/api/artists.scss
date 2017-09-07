@@ -1,3 +1,102 @@
 // Place all the styles related to the Api::Artists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//Artist Index
+
+.artist_index{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: lightgrey;
+  padding: 2%;
+}
+
+//Artist Item
+
+.artist_item_container{
+  display: inline-block;
+}
+
+.artist_item{
+  margin: 10px;
+  width: 150px;
+  height: 150px;
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.artist_item:hover{
+  transform: scale(1.05);
+}
+
+.artist_item_img{
+  height: 60%;
+  width: 60%;
+}
+
+//ArtistDetail / Album Detail
+
+.artist_album_index{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+}
+
+//Album Item
+
+.artist_album_item_container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 15px;
+  align-items: center;
+}
+
+.artist_album_item{
+  margin: 10px;
+  width: 70%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  float: left;
+}
+
+.artist_album_item_img{
+  height: 150px;
+  width: 150px;
+  margin-right: 20px;
+}
+
+.artist_album_songs{
+  margin: 10px;
+  width: 70%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  float: left;
+}
+
+.artist_album_songs button {
+  float: left;
+  width: 100px;
+  border: 0px;
+  background-color: white;
+  display: inline;
+  text-align: center;
+}
+
+.artist_album_songs a{
+  align-self: center;
+  font-weight: bold;
+}

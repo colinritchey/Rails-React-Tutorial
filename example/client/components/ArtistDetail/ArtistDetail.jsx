@@ -30,7 +30,7 @@ class ArtistDetail extends React.Component {
       )
     } else {
       return(
-        <div className={styles.album_index}>
+        <div className='artist_album_index'>
           <h3>{artist.name}</h3>
           {artist.albums.map((album) =>
             <AlbumItem album={album} key={`album-${album.id}`}/>

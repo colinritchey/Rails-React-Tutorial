@@ -51,11 +51,19 @@ Within the routes.rb file wrap your main resources routes with the namespace api
 # /server/config/routes.rb
 Rails.application.routes.draw do
 
+  root to: 'static_pages#root'
+
   namespace :api, defaults: { format: :json } do
     resources :songs, only: [:index, :show, :create]
   end
 end
 
+```
+
+Static page is the point of entry for our application and will need its own controller. However the controller wont have much going on, its important that it has a standard root.html.erb file with a html tag of an id our React components can build off of.
+
+```html
+<main id="root"></main>
 ```
 
 ```ruby

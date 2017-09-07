@@ -29,27 +29,27 @@ class SongDetail extends React.Component {
       )
     } else {
       return(
-        <div className={styles.song_detail}>
-          <div className={styles.album_artist_container}>
-            <div className={styles.song_vid}>
+        <div className='song_detail'>
+          <div className='album_artist_container'>
+            <div className='song_vid'>
               <iframe width="350" height="180"
                 src={`https://www.youtube.com/embed/${song.embedded_url}`}
                 ></iframe>
             </div>
 
-            <div className={styles.album_artist}>
+            <div className='album_artist'>
               <Link to={`/albums/${song.album.id}`}
-                className={styles.song_album}
+                className='song_album'
                 >{song.album.name}</Link>
 
               <Link to={`/artists/${song.artist.id}`}
-                className={styles.song_artist}
+                className='song_artist'
                 >{song.artist.name}</Link>
 
             </div>
           </div>
           <h3>{song.name}</h3>
-          <p className={styles.song_lyrics}>{song.lyrics}</p>
+          <p className='song_lyrics'>{song.lyrics}</p>
         </div>
       )
     }

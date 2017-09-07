@@ -34,7 +34,7 @@ class AlbumDetail extends React.Component {
       return(
         <div>
           { albumTitle }
-          <ol className={styles.song_list_ordered}>
+          <ol className='song_list_ordered'>
             {album.songs.map((song) =>
               <SongItem song={song} key={`song-${song.id}`}/>
             )}

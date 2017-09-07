@@ -30,7 +30,7 @@ class ArtistIndex extends React.Component {
       )
     } else {
       return(
-        <div className={styles.artist_index}>
+        <div className='artist_index'>
           { artists.map((artist) => {
             return(
               <ArtistIndexItem
