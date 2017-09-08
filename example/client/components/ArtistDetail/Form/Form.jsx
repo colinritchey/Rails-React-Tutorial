@@ -2,7 +2,7 @@ import React from 'react';
 import ReactModal from 'react-modal';
 import { withRouter } from "react-router-dom";
 
-import { createNewArtist } from '../actions';
+import { createNewAlbum } from '../actions';
 
 class Form extends React.Component {
   constructor(props){
@@ -13,15 +13,16 @@ class Form extends React.Component {
   }
 
   handleSubmit(){
-    let artist = {
-      artist: {
+    let album = {
+      album: {
         name: this.state.name,
-        image_url:  this.state.imageUrl
+        image_url:  this.state.imageUrl,
+        artist_id: this.props.artist.id
       }
     }
-    createNewArtist(artist).then((res) => {
+    createNewAlbum(album).then((res) => {
       this.props.closeModal();
-      this.props.history.push(`/artists/${res.id}`);
+      this.props.history.push(`/albums/${res.id}`);
     });
   }
 
@@ -31,7 +32,7 @@ class Form extends React.Component {
     return(
       <ReactModal
         isOpen={this.props.showModal}
-        contentLabel='artist-form'>
+        contentLabel='album-form'>
 
 
         <form onSubmit={this.handleSubmit} className='create-container'>

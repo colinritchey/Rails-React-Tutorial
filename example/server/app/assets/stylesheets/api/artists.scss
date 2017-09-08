@@ -26,6 +26,12 @@
   display: inline-block;
 }
 
+.artist_index_header{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
 .artist_item{
   margin: 10px;
   width: 150px;
@@ -69,6 +75,11 @@
   align-items: center;
 }
 
+.artist_header{
+  display: flex;
+  justify-content: space-between;
+}
+
 .artist_album_item{
   margin: 10px;
   width: 70%;
@@ -87,6 +98,7 @@
 
 .artist_album_songs{
   margin: 10px;
+  padding: 15px;
   width: 70%;
 
   display: flex;

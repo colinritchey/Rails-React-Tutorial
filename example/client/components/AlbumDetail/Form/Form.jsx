@@ -2,28 +2,34 @@ import React from 'react';
 import ReactModal from 'react-modal';
 import { withRouter } from "react-router-dom";
 
-import { createNewArtist } from '../actions';
+import { createNewSong } from '../actions';
 
 class Form extends React.Component {
   constructor(props){
     super(props);
-    this.state = { name: '', imageUrl: '' };
+    this.state = { name: '', lyrics: '', embedded_url: '' };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(){
-    let artist = {
-      artist: {
+    let songEmbeddedId = this.state.embedded_url.split('?v=')[1];
+
+    let song = {
+      song: {
         name: this.state.name,
-        image_url:  this.state.imageUrl
+        lyrics: this.state.lyrics,
+        embedded_url: songEmbeddedId,
+        album_id: this.props.album.id
       }
     }
-    createNewArtist(artist).then((res) => {
+    createNewSong(song).then((res) => {
       this.props.closeModal();
-      this.props.history.push(`/artists/${res.id}`);
+      this.props.history.push(`/songs/${res.id}`);
     });
   }
+
+  trimEm
 
   render(){
     let imageLink = this.state.imageUrl !== '' ? `${this.state.imageUrl}` : '';
@@ -31,30 +37,38 @@ class Form extends React.Component {
     return(
       <ReactModal
         isOpen={this.props.showModal}
-        contentLabel='artist-form'>
+        contentLabel='song-form'>
 
 
         <form onSubmit={this.handleSubmit} className='create-container'>
-          <img
-            src={imageLink}
-            />
-          <label value='Image'>Image Link:
-            <input
-              type='text'
-              value={this.state.imageUrl}
-              onChange={(e) => this.setState({imageUrl: e.target.value})}
-            />
-          </label>
 
           <label>
             Name
             <input
               type='text'
-              value={this.name}
+              value={this.state.name}
               onChange={(e) => this.setState({ name: e.target.value })}>
 
             </input>
           </label>
+
+          <label>
+            Youtube link
+            <input
+              type='text'
+              value={this.state.embedded_url}
+              onChange={(e) => this.setState({ embedded_url: e.target.value })}>
+
+            </input>
+          </label>
+
+          <label value='Lyrics'>Lyrics
+            <textarea
+              value={this.state.lyrics}
+              onChange={(e) => this.setState({lyrics: e.target.value})}
+              />
+          </label>
+
           <div className='form-buttons'>
             <a
               className='submit-button'

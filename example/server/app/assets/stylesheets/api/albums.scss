@@ -10,11 +10,28 @@
   list-style-type: none;
 }
 
+.album_header{
+  display: flex;
+  flex-direction: row;
+}
+
+.album_header img{
+  height: 150px;
+  width: 150px;
+  margin-right: 20px;
+}
+
+.album_side{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 //AlbumDetail/song_item
 .song_item {
   border-bottom: 1px solid lightgray;
-    counter-increment: step-counter;
-    margin: 10px;
+  counter-increment: step-counter;
+  margin: 10px;
 }
 
 .song_item::before {

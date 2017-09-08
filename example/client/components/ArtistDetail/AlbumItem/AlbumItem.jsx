@@ -21,11 +21,6 @@ class AlbumItem extends React.Component{
 
     return(
       <div className='artist_album_item_container'>
-        <div className='artist_album_item'>
-          <img className='artist_album_item_img'
-            src={ albumImage }></img>
-          <Link to={`/albums/${album.id}`}>{album.name}</Link>
-        </div>
         <div className='artist_album_songs'>
           <AlbumDetail albumId={album.id}/>
         </div>

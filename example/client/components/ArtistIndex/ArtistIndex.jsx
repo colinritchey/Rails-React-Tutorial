@@ -33,11 +33,11 @@ class ArtistIndex extends React.Component {
       this.state.artists[id]
     );
 
-    let hidden = {
-      visibility: 'hidden'
-    }
-
-    hidden.visibility = this.state.showForm ? 'visible' :  'hidden';
+    // let hidden = {
+    //   visibility: 'hidden'
+    // }
+    //
+    // hidden.visibility = this.state.showForm ? 'visible' :  'hidden';
 
 
     let isHidden = this.state.showForm ? '' : 'visibility: hidden;'
@@ -52,13 +52,16 @@ class ArtistIndex extends React.Component {
     } else {
       return(
         <div>
-          <div style={hidden} className='form_container' >
+          <div  className='form_container' >
             <Form
               showModal={this.state.showModal}
               closeModal={this.handleCloseModal}/>
           </div>
-        <button
-          onClick={this.handleOpenModal}>{buttonText}</button>
+          <div className='artist_index_header'>
+            <button
+              className='add_button'
+              onClick={this.handleOpenModal}>{buttonText}</button>
+          </div>
 
           <div className='artist_index'>
             { artists.map((artist) => {
