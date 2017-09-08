@@ -1,0 +1,70 @@
+.create-container{
+  display: flex;
+  flex-direction: column;
+
+  height: 500px;
+  align-items: center;
+}
+
+.create-container > *{
+  margin-top: 50px;
+}
+
+.create-container label{
+
+}
+
+.create-container input[type='text']{
+  font-size: 16px;
+  margin-left: 10px;
+  width: 250px;
+  border: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid lightgrey;
+}
+
+.create-container textarea {
+  width: 500px;
+}
+
+.create-container img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+button {
+  padding: 0px;
+}
+
+.form-buttons{
+  display: flex;
+  flex-direction: row;
+  width: 25%;
+  justify-content: space-evenly;
+}
+
+.submit-button{
+  text-align: center;
+  color: #6db16d;
+  border: 2px solid #6db16d;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: transparent;
+  width: 75px;
+  height: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.cancel-button{
+  text-align: center;
+  color: #ca6553;
+  border: 2px solid #ca6553;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: transparent;
+  width: 75px;
+  height: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}

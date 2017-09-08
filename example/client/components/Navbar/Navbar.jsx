@@ -10,12 +10,7 @@ export const Navbar = () => {
         <div>
           <Link to={'/'}>Music App</Link>
         </div>
-        <div className='header_right_content'>
-          <div className='right_buttons'>
-            <Link to={'/albums'}>Albums</Link>
-            <Link to={'/songs'}>Songs</Link>
-          </div>
-        </div>
+        
       </div>
     </div>
   )
