@@ -70,15 +70,15 @@ Static page is the point of entry for our application and will need its own cont
 
 #/server/app/controller/api/songs_controller.rb
 class Api::SongsController < ApplicationController
+
   def show
     @song = Song.find(params[:id])
   end
 
-  private
-
-  def song_params
-    params.require(:song).permit(:name, :album, :artist, :track_id)
+  def index
+    @songs = Song.all
   end
+
 end
 ```
 
@@ -207,10 +207,7 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-maps',
-  resolve: {
-    extensions: [".js", ".jsx" ]
-  }
+  devtool: 'source-maps'
 };
 ```
 
