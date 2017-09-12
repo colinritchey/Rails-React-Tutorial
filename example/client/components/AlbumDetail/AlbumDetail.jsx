@@ -5,8 +5,6 @@ import Form from './Form/Form';
 import { getAlbumDetail } from './actions';
 import { Link } from 'react-router-dom';
 
-import styles from './styles.css';
-
 class AlbumDetail extends React.Component {
   constructor(props){
     super(props);

@@ -1,6 +1,5 @@
 import React from 'react';
 import SongIndexItem from './SongIndexItem/SongIndexItem';
-import styles from './styles.css';
 import { getAllSongs } from './actions';
 
 class SongIndex extends React.Component {

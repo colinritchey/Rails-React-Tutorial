@@ -9,8 +9,6 @@ import SongDetail from './SongDetail/SongDetail';
 
 import { Navbar } from './Navbar/Navbar';
 
-import styles from './styles.css';
-
 class App extends Component {
   render() {
     return (

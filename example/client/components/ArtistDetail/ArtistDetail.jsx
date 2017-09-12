@@ -5,7 +5,6 @@ import AlbumItem from './AlbumItem/AlbumItem';
 import Form from './Form/Form';
 
 import { getArtistDetail } from './actions';
-import styles from './styles.css';
 
 class ArtistDetail extends React.Component {
   constructor(props){

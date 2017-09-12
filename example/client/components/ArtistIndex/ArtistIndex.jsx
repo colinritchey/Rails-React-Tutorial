@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './styles.css';
 import ArtistIndexItem from './ArtistIndexItem/ArtistIndexItem';
 import Form from './Form/Form';
 
@@ -32,13 +31,6 @@ class ArtistIndex extends React.Component {
     let artists = Object.keys(this.state.artists).map((id) =>
       this.state.artists[id]
     );
-
-    // let hidden = {
-    //   visibility: 'hidden'
-    // }
-    //
-    // hidden.visibility = this.state.showForm ? 'visible' :  'hidden';
-
 
     let isHidden = this.state.showForm ? '' : 'visibility: hidden;'
     let buttonText = this.state.showForm ? 'Cancel' : 'Add New'

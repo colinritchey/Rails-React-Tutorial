@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './styles.css';
 import { getSongDetail } from './actions';
 
 class SongDetail extends React.Component {
